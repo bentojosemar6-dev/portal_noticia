@@ -1,0 +1,28 @@
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Bloquear acesso a config/ e includes/
+  RewriteRule ^config/ - [F,L]
+  RewriteRule ^includes/ - [F,L]
+  RewriteRule ^admin/includes/ - [F,L]
+  RewriteRule ^database/ - [F,L]
+
+  # Bloquear execução PHP em uploads
+  RewriteRule ^assets/img/uploads/.*\.php$ - [F,L]
+
+  # URLs amigaveis
+  RewriteRule ^noticia/([a-z0-9\-]+)/?$ noticia.php?slug=$1 [QSA,L]
+  RewriteRule ^categoria/([a-z0-9\-]+)/?$ categoria.php?slug=$1 [QSA,L]
+  RewriteRule ^pesquisa/?$ pesquisa.php [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

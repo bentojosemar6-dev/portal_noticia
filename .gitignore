@@ -1,0 +1,15 @@
+# Ambiente
+.env
+.vscode/
+.idea/
+*.log
+
+# Sistema
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Uploads de utilizadores (manter apenas .gitkeep e index.html)
+assets/img/uploads/*
+!assets/img/uploads/.gitkeep
+!assets/img/uploads/index.html

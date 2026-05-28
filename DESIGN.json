@@ -1,0 +1,108 @@
+﻿{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-28T00:00:00.000Z",
+  "title": "Design System: Portal de Notícias IPIL",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Laranja Institucional", "canonical": "oklch(65% 0.22 50)", "tonalRamp": ["oklch(35% 0.18 50)","oklch(42% 0.2 50)","oklch(50% 0.21 50)","oklch(58% 0.22 50)","oklch(65% 0.22 50)","oklch(73% 0.18 50)","oklch(82% 0.12 50)","oklch(92% 0.06 50)"] },
+      "primary-dark": { "role": "primary", "displayName": "Laranja Farol", "canonical": "oklch(55% 0.24 50)", "tonalRamp": [] },
+      "primary-light": { "role": "primary", "displayName": "Laranja Suave", "canonical": "oklch(88% 0.08 50)", "tonalRamp": [] },
+      "bg": { "role": "neutral", "displayName": "Branco Giz", "canonical": "oklch(99% 0.003 80)", "tonalRamp": [] },
+      "bg-soft": { "role": "neutral", "displayName": "Branco Papel", "canonical": "oklch(97% 0.005 60)", "tonalRamp": [] },
+      "surface": { "role": "neutral", "displayName": "Cinza Superfície", "canonical": "oklch(96% 0.003 250)", "tonalRamp": [] },
+      "border": { "role": "neutral", "displayName": "Cinza Borda", "canonical": "oklch(92% 0.005 250)", "tonalRamp": [] },
+      "text": { "role": "neutral", "displayName": "Cinza Lousa", "canonical": "oklch(25% 0.01 250)", "tonalRamp": [] },
+      "text-muted": { "role": "neutral", "displayName": "Cinza Legenda", "canonical": "oklch(55% 0.01 250)", "tonalRamp": [] },
+      "danger": { "role": "feedback", "displayName": "Vermelho Alerta", "canonical": "oklch(55% 0.22 30)", "tonalRamp": [] },
+      "success": { "role": "feedback", "displayName": "Verde Confirmação", "canonical": "oklch(60% 0.2 145)", "tonalRamp": [] },
+      "warning": { "role": "feedback", "displayName": "Amarelo Atenção", "canonical": "oklch(70% 0.18 95)", "tonalRamp": [] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline na página inicial." },
+      "headline": { "displayName": "Headline", "purpose": "Títulos de página e de notícia individual." },
+      "title": { "displayName": "Title", "purpose": "Títulos de cards e subtítulos." },
+      "body": { "displayName": "Body", "purpose": "Corpo de texto, parágrafos, conteúdo." },
+      "label": { "displayName": "Label", "purpose": "Metadados, badges, timestamps." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 1px 3px rgba(0,0,0,0.08)", "purpose": "Cards em repouso." },
+      { "name": "card-hover", "value": "0 4px 12px rgba(0,0,0,0.12)", "purpose": "Card sob cursor." },
+      { "name": "navbar", "value": "0 2px 8px rgba(0,0,0,0.1)", "purpose": "Navbar e topbar admin." },
+      { "name": "modal", "value": "0 8px 24px rgba(0,0,0,0.15)", "purpose": "Modais, dropdowns." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.19, 1, 0.22, 1)", "purpose": "Easing padrão." },
+      { "name": "duration-feedback", "value": "200ms", "purpose": "Hover, focus, estado." },
+      { "name": "duration-expand", "value": "300ms", "purpose": "Expansão, menu mobile." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botão principal de ação.",
+      "html": "<button class=\"ds-btn-primary\">Publicar Notícia</button>",
+      "css": ".ds-btn-primary { background: #F97316; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 0.9375rem; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; transition: background 200ms cubic-bezier(0.19,1,0.22,1), transform 200ms cubic-bezier(0.19,1,0.22,1); } .ds-btn-primary:hover { background: #EA580C; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #FED7AA; outline-offset: 2px; }"
+    },
+    {
+      "name": "News Card",
+      "kind": "card",
+      "refersTo": "card-noticia",
+      "description": "Card de notícia no grid público.",
+      "html": "<article class=\"ds-card\"><img class=\"ds-card-img\" src=\"https://placehold.co/600x400/FED7AA/F97316?text=Noticia\" alt=\"\"><div class=\"ds-card-body\"><span class=\"ds-badge\">Eventos</span><h3 class=\"ds-card-title\">Título da notícia em até duas linhas</h3><p class=\"ds-card-summary\">Resumo curto da notícia.</p><div class=\"ds-card-meta\"><span>Por Admin</span><span>28 Maio 2026</span></div></div></article>",
+      "css": ".ds-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: box-shadow 200ms cubic-bezier(0.19,1,0.22,1), transform 200ms cubic-bezier(0.19,1,0.22,1); } .ds-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); transform: translateY(-2px); } .ds-card-img { width: 100%; height: 200px; object-fit: cover; display: block; } .ds-card-body { padding: 20px; } .ds-card-title { font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: clamp(1.125rem,2vw,1.5rem); line-height: 1.3; color: #1E293B; margin: 12px 0 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; } .ds-card-summary { font-family: Inter, system-ui, sans-serif; font-weight: 400; font-size: 0.9375rem; line-height: 1.6; color: #64748B; margin: 0 0 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; } .ds-card-meta { display: flex; gap: 16px; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 0.8125rem; color: #64748B; letter-spacing: 0.02em; } .ds-badge { display: inline-block; background: rgba(249,115,22,0.15); color: #EA580C; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 0.8125rem; padding: 4px 10px; border-radius: 4px; letter-spacing: 0.02em; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Campo de texto padrão.",
+      "html": "<div><label class=\"ds-label\">Título</label><input class=\"ds-input\" type=\"text\" placeholder=\"Digite o título\"></div>",
+      "css": ".ds-label { display: block; font-family: Inter, system-ui, sans-serif; font-weight: 500; font-size: 0.8125rem; color: #1E293B; letter-spacing: 0.02em; margin-bottom: 4px; } .ds-input { width: 100%; font-family: Inter, system-ui, sans-serif; font-weight: 400; font-size: 1rem; color: #1E293B; padding: 12px; border: 1px solid #E2E8F0; border-radius: 8px; background: #fff; box-sizing: border-box; transition: border-color 200ms cubic-bezier(0.19,1,0.22,1), box-shadow 200ms cubic-bezier(0.19,1,0.22,1); } .ds-input:focus { outline: none; border-color: #F97316; box-shadow: 0 0 0 3px rgba(249,115,22,0.15); } .ds-input::placeholder { color: #94A3B8; }"
+    },
+    {
+      "name": "Hero Destaque",
+      "kind": "custom",
+      "refersTo": "hero-destaque",
+      "description": "Hero da página inicial com notícia em destaque.",
+      "html": "<section class=\"ds-hero\"><div class=\"ds-hero-overlay\"></div><div class=\"ds-hero-content\"><span class=\"ds-badge\" style=\"--badge-bg: rgba(249,115,22,0.9); --badge-color: #fff;\">Em Destaque</span><h1 class=\"ds-hero-title\">Título da notícia em destaque</h1><p class=\"ds-hero-summary\">Resumo da notícia destacada.</p><a href=\"#\" class=\"ds-hero-cta\">Ler notícia completa</a></div></section>",
+      "css": ".ds-hero { position: relative; width: 100%; min-height: 420px; background: linear-gradient(135deg, #1E293B 0%, #334155 100%); display: flex; align-items: flex-end; overflow: hidden; border-radius: 12px; margin-bottom: 32px; } .ds-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.3) 100%); } .ds-hero-content { position: relative; padding: 40px; max-width: 640px; z-index: 1; } .ds-hero-title { font-family: Inter, system-ui, sans-serif; font-weight: 800; font-size: clamp(2rem,5vw,3.5rem); color: #fff; line-height: 1.1; letter-spacing: -0.02em; margin: 16px 0 12px; } .ds-hero-summary { font-family: Inter, system-ui, sans-serif; font-weight: 400; font-size: 1.125rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0 0 24px; } .ds-hero-cta { display: inline-block; background: #F97316; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 1rem; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: background 200ms cubic-bezier(0.19,1,0.22,1), transform 200ms cubic-bezier(0.19,1,0.22,1); } .ds-hero-cta:hover { background: #EA580C; transform: translateY(-2px); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Farol Acadêmico",
+    "overview": "O Portal de Notícias do IPIL é um farol digital para a comunidade acadêmica. Como um farol, ele precisa ser visível de longe, confiável na orientação que oferece, e constante na sua presença. O design existe para servir o conteúdo institucional com clareza e convicção, eliminando todo ruído visual que separe o visitante da informação que busca.",
+    "keyCharacteristics": [
+      "Conteúdo primeiro: hierarquia tipográfica forte, espaçamento generoso, zero decoração supérflua",
+      "Farol cromático: laranja usado como guia, nunca como poluição de fundo",
+      "Planar com propósito: superfícies limpas, elevação sutil apenas para interação",
+      "Jovem sem ser infantil: energia acadêmica com seriedade institucional"
+    ],
+    "rules": [
+      { "name": "A Regra do Farol", "body": "O laranja primário ocupa no máximo 30% de qualquer tela. Ele guia, não domina.", "section": "colors" },
+      { "name": "A Regra do Respiro", "body": "Nenhum bloco de texto ultrapassa 75 caracteres por linha.", "section": "typography" },
+      { "name": "A Regra do Plano", "body": "A hierarquia visual é conquistada por cor e espaçamento, não por sombra.", "section": "elevation" }
+    ],
+    "dos": [
+      "Usar o laranja #F97316 como guia visual: links, badges, botões primários, borda inferior da navbar",
+      "Manter contraste WCAG AA: texto #1E293B nunca abaixo de 4.5:1 contra fundo #FFFFFF",
+      "Usar espaçamento generoso entre seções (padding vertical 48px mínimo)",
+      "Usar sombra card repouso (0 1px 3px) como padrão e hover (0 4px 12px + translateY(-2px))"
+    ],
+    "donts": [
+      "Usar borda lateral colorida (border-left ou border-right >1px) em cards, listas, ou alertas",
+      "Usar texto gradiente com background-clip: text",
+      "Usar glassmorphism ou blur effects decorativos",
+      "Usar o laranja como fundo de página inteira",
+      "Criar grids de cards idênticos com ícone + heading + texto repetitivo",
+      "Usar preto puro #000 ou branco puro #FFF"
+    ]
+  }
+}

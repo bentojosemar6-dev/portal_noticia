@@ -1,9 +1,7 @@
 -- Portal de Notícias IPIL v2.0
--- Database: portal_ipil
+-- Database: if0_42039677_portal_ipil
 -- Encoding: utf8mb4
-
-CREATE DATABASE IF NOT EXISTS portal_ipil CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE portal_ipil;
+-- Nota: Criar a BD no painel InfinityFree antes de importar
 
 -- Categorias
 CREATE TABLE IF NOT EXISTS categorias (

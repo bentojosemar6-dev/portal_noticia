@@ -1,9 +1,9 @@
 <?php
 /* ─── Configuração da Base de Dados ─── */
 define('DB_HOST', 'localhost');     // InfinityFree: mysql.seudominio.com
-define('DB_NAME', 'if0_42039677_portal_ipil');
+define('DB_NAME', 'portal_noticia');
 define('DB_USER', 'root');
-define('DB_PASS', 'Jorge2005@paim');
+define('DB_PASS', '');
 define('DB_CHARSET', 'utf8mb4');
 
 /* ─── Configuração do Site ─── */

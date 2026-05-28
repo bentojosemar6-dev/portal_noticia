@@ -1,0 +1,1 @@
+console.log('Portal Acadêmico carregado com sucesso!');
